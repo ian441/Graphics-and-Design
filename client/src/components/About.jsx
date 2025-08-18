@@ -1,11 +1,9 @@
-// The exported code uses Tailwind CSS. Install Tailwind CSS in your dev environment to ensure all styles work.
-
 import React, { useState, useEffect } from 'react';
 
 const About = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [hoveredValue, setHoveredValue] = useState<number | null>(null);
-  const [hoveredTeam, setHoveredTeam] = useState<number | null>(null);
+  const [hoveredValue, setHoveredValue] = useState(null);
+  const [hoveredTeam, setHoveredTeam] = useState(null);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -34,28 +32,28 @@ const About = () => {
       name: 'Sarah Johnson',
       position: 'Chief Executive Officer',
       bio: 'With over 15 years of industry experience, Sarah leads our vision for innovation and growth in the digital transformation space.',
-      image: 'https://readdy.ai/api/search-image?query=professional%20business%20woman%20CEO%20executive%20portrait%20in%20modern%20office%20setting%20with%20clean%20white%20background%20wearing%20elegant%20business%20suit%20confident%20smile&width=300&height=300&seq=team1&orientation=squarish',
+      image: 'https://readdy.ai/api/search-image?query=professional%20business%20woman%20CEO%20executive%20portrait&width=300&height=300&seq=team1',
       social: { linkedin: '#', twitter: '#' }
     },
     {
       name: 'Michael Chen',
       position: 'Chief Technology Officer',
       bio: 'Michael brings deep technical expertise and strategic thinking to drive our technology initiatives and product development roadmap.',
-      image: 'https://readdy.ai/api/search-image?query=professional%20business%20man%20CTO%20technology%20executive%20portrait%20in%20modern%20office%20setting%20with%20clean%20white%20background%20wearing%20business%20attire%20confident%20expression&width=300&height=300&seq=team2&orientation=squarish',
+      image: 'https://readdy.ai/api/search-image?query=professional%20business%20man%20CTO&width=300&height=300&seq=team2',
       social: { linkedin: '#', github: '#' }
     },
     {
       name: 'Emily Rodriguez',
       position: 'Head of Design',
       bio: 'Emily crafts beautiful and intuitive user experiences that bridge the gap between complex functionality and elegant simplicity.',
-      image: 'https://readdy.ai/api/search-image?query=professional%20business%20woman%20design%20director%20portrait%20in%20modern%20office%20setting%20with%20clean%20white%20background%20wearing%20creative%20professional%20attire%20warm%20smile&width=300&height=300&seq=team3&orientation=squarish',
+      image: 'https://readdy.ai/api/search-image?query=professional%20business%20woman%20designer&width=300&height=300&seq=team3',
       social: { linkedin: '#', dribbble: '#' }
     },
     {
       name: 'David Thompson',
       position: 'VP of Operations',
       bio: 'David ensures operational excellence and scalable processes that enable our team to deliver exceptional results consistently.',
-      image: 'https://readdy.ai/api/search-image?query=professional%20business%20man%20operations%20executive%20portrait%20in%20modern%20office%20setting%20with%20clean%20white%20background%20wearing%20business%20suit%20professional%20demeanor&width=300&height=300&seq=team4&orientation=squarish',
+      image: 'https://readdy.ai/api/search-image?query=professional%20business%20man%20executive&width=300&height=300&seq=team4',
       social: { linkedin: '#', twitter: '#' }
     }
   ];
@@ -250,6 +248,7 @@ const About = () => {
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 Our journey began when our founders recognized the need for technology solutions that truly understand and serve human needs. Today, we continue to push boundaries and set new standards for innovation in our industry.
               </p>
+              
               <div className="space-y-6">
                 {milestones.map((milestone, index) => (
                   <div key={index} className="milestone-item">
