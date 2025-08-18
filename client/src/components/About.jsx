@@ -136,22 +136,6 @@ const About = () => {
         }
       `}</style>
 
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-2xl font-bold text-gray-900">
-            InnovateCorp
-          </div>
-          <nav className="hidden md:flex space-x-8">
-            <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">Home</a>
-            <a href="#" className="text-blue-600 font-medium cursor-pointer">About</a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">Services</a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">Portfolio</a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">Contact</a>
-          </nav>
-        </div>
-      </header>
-
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-white py-20">
         <div className="max-w-7xl mx-auto px-6 text-center">
