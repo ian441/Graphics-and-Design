@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState('all');
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState(null);
   const [visibleProjects, setVisibleProjects] = useState(9);
 
   const filterCategories = [
@@ -21,7 +21,7 @@ const Portfolio = () => {
       categoryLabel: 'Branding',
       client: 'Elegance Boutique',
       duration: '3 months',
-      image: 'https://readdy.ai/api/search-image?query=luxury%20fashion%20brand%20identity%20design%20with%20elegant%20logo%20business%20cards%20and%20packaging%20on%20clean%20white%20marble%20surface%20with%20gold%20accents%20and%20sophisticated%20typography%20professional%20photography&width=400&height=500&seq=port1&orientation=portrait',
+      image: 'https://www.halo-media.com/wp-content/uploads/2023/09/luxury-branding-fashion-design-empiro2.jpg',
       description: 'Complete brand identity redesign for a luxury fashion boutique, including logo design, brand guidelines, and marketing materials.',
       challenge: 'The client needed a sophisticated brand identity that would appeal to high-end customers while maintaining accessibility.',
       solution: 'We created an elegant, minimalist design system with premium typography and a refined color palette that reflects luxury and sophistication.',
@@ -41,7 +41,7 @@ const Portfolio = () => {
       categoryLabel: 'Web Design',
       client: 'InnovateTech Solutions',
       duration: '6 weeks',
-      image: 'https://readdy.ai/api/search-image?query=modern%20tech%20startup%20website%20design%20displayed%20on%20multiple%20devices%20with%20clean%20interface%20blue%20color%20scheme%20and%20contemporary%20layout%20on%20white%20background%20professional%20presentation&width=400&height=500&seq=port2&orientation=portrait',
+      image: 'https://www.digitalsilk.com/wp-content/uploads/2022/09/best-tech-websites-hero-image.jpg',
       description: 'Responsive website design and development for a technology startup focusing on user experience and conversion optimization.',
       challenge: 'Creating a website that effectively communicates complex technical concepts while maintaining user engagement.',
       solution: 'We designed an intuitive interface with clear navigation, interactive elements, and compelling visual storytelling.',
@@ -61,7 +61,7 @@ const Portfolio = () => {
       categoryLabel: 'Digital Marketing',
       client: 'FitLife Wellness',
       duration: '2 months',
-      image: 'https://readdy.ai/api/search-image?query=creative%20social%20media%20campaign%20design%20materials%20including%20instagram%20posts%20and%20stories%20with%20vibrant%20colors%20and%20fitness%20theme%20arranged%20on%20white%20background%20modern%20layout&width=400&height=500&seq=port3&orientation=portrait',
+      image: 'https://www.the-escape.co.uk/application/files/cache/thumbnails/2075c3994bf8d2bf04debb980bd4caad.jpg',
       description: 'Comprehensive social media campaign design for a wellness brand, including content strategy and visual assets.',
       challenge: 'Standing out in the crowded wellness market while building authentic community engagement.',
       solution: 'We developed a vibrant, motivational visual language with consistent branding across all social platforms.',
@@ -81,7 +81,7 @@ const Portfolio = () => {
       categoryLabel: 'Print Design',
       client: 'Global Finance Corp',
       duration: '4 weeks',
-      image: 'https://readdy.ai/api/search-image?query=professional%20corporate%20annual%20report%20design%20with%20clean%20layout%20charts%20and%20graphs%20on%20white%20paper%20with%20blue%20accents%20and%20modern%20typography%20business%20document%20photography&width=400&height=500&seq=port4&orientation=portrait',
+      image: 'https://elements-resized.envatousercontent.com/elements-cover-images/acc9b3e7-ddeb-4de4-8dd9-06bd8e7094aa?w=433&cf_fit=scale-down&q=85&format=auto&s=e26e77812a1bd983359b13959c0c3c9915c52317d99790e13c3d7f5dd3056598',
       description: 'Design and layout of a comprehensive annual report for a major financial corporation.',
       challenge: 'Presenting complex financial data in an engaging and accessible format for stakeholders.',
       solution: 'We created a clean, professional design with clear data visualization and strategic use of white space.',
@@ -101,7 +101,7 @@ const Portfolio = () => {
       categoryLabel: 'Branding',
       client: 'Artisan Kitchen',
       duration: '8 weeks',
-      image: 'https://readdy.ai/api/search-image?query=restaurant%20brand%20identity%20design%20with%20logo%20menu%20design%20and%20packaging%20materials%20on%20wooden%20surface%20with%20warm%20lighting%20and%20artisan%20food%20theme%20professional%20branding%20photography&width=400&height=500&seq=port5&orientation=portrait',
+      image: 'https://nice-branding.com/wp-content/uploads/2022/06/restaurant-branding-agency-nashville.jpg',
       description: 'Complete brand overhaul for an upscale restaurant, including logo, menu design, and interior branding elements.',
       challenge: 'Creating a brand that reflects the restaurant\'s artisanal approach while appealing to a broad customer base.',
       solution: 'We developed a warm, inviting brand identity with hand-crafted elements and earthy color palette.',
@@ -121,7 +121,7 @@ const Portfolio = () => {
       categoryLabel: 'Web Design',
       client: 'StyleHub Online',
       duration: '10 weeks',
-      image: 'https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20design%20showing%20product%20pages%20and%20shopping%20interface%20on%20laptop%20and%20mobile%20devices%20with%20clean%20layout%20and%20fashion%20products%20professional%20presentation&width=400&height=500&seq=port6&orientation=portrait',
+      image: 'https://www.figma.com/community/resource/cd5d69fb-1006-48cf-8f6c-d5855e851d46/thumbnail',
       description: 'User-centered design for a fashion e-commerce platform with focus on conversion optimization and mobile experience.',
       challenge: 'Creating an intuitive shopping experience that works seamlessly across all devices and drives sales.',
       solution: 'We designed a streamlined checkout process with enhanced product visualization and personalized recommendations.',
@@ -141,7 +141,7 @@ const Portfolio = () => {
       categoryLabel: 'Digital Marketing',
       client: 'EcoGreen Products',
       duration: '3 months',
-      image: 'https://readdy.ai/api/search-image?query=eco-friendly%20digital%20marketing%20campaign%20materials%20with%20green%20theme%20including%20web%20banners%20and%20social%20media%20graphics%20on%20clean%20white%20background%20sustainable%20design%20elements&width=400&height=500&seq=port7&orientation=portrait',
+      image: 'https://cdn.prod.website-files.com/64ae459829d7e0cb535bc24c/677c9d04367b4e10c2176bce_opalstone_card-marketingdesign.jpg',
       description: 'Integrated digital marketing campaign for an eco-friendly product line, spanning multiple channels and platforms.',
       challenge: 'Communicating sustainability values while driving product awareness and sales in a competitive market.',
       solution: 'We created an authentic, nature-inspired campaign that highlighted environmental benefits and brand values.',
@@ -161,7 +161,7 @@ const Portfolio = () => {
       categoryLabel: 'Print Design',
       client: 'Modern Architecture Quarterly',
       duration: '6 weeks',
-      image: 'https://readdy.ai/api/search-image?query=modern%20architecture%20magazine%20layout%20design%20with%20clean%20typography%20and%20stunning%20building%20photography%20spread%20across%20open%20pages%20on%20white%20surface%20professional%20editorial%20design&width=400&height=500&seq=port8&orientation=portrait',
+      image: 'https://www.unsell.design/wp-content/uploads/2021/08/9fdd3fcb-featured-image.jpg',
       description: 'Editorial design for a quarterly architecture magazine, focusing on typography and visual storytelling.',
       challenge: 'Balancing stunning architectural photography with readable text layouts and consistent design system.',
       solution: 'We developed a flexible grid system that showcases photography while maintaining excellent readability.',
@@ -181,7 +181,7 @@ const Portfolio = () => {
       categoryLabel: 'Web Design',
       client: 'MedConnect Solutions',
       duration: '12 weeks',
-      image: 'https://readdy.ai/api/search-image?query=healthcare%20mobile%20app%20interface%20design%20showing%20clean%20medical%20dashboard%20and%20patient%20management%20screens%20on%20smartphone%20with%20blue%20and%20white%20color%20scheme%20professional%20ui%20design&width=400&height=500&seq=port9&orientation=portrait',
+      image: 'https://cdn.dribbble.com/userupload/11712101/file/original-8325640f824b29ea86b0529dea15ae0d.jpg?resize=400x0',
       description: 'Mobile app interface design for a healthcare management platform, prioritizing accessibility and user safety.',
       challenge: 'Creating an interface that healthcare professionals can use efficiently while maintaining patient data security.',
       solution: 'We designed an intuitive, accessible interface with clear information hierarchy and safety-first interactions.',
@@ -201,7 +201,7 @@ const Portfolio = () => {
       categoryLabel: 'Branding',
       client: 'NextGen Robotics',
       duration: '5 months',
-      image: 'https://readdy.ai/api/search-image?query=futuristic%20robotics%20startup%20brand%20identity%20with%20modern%20logo%20and%20tech-inspired%20business%20materials%20on%20dark%20surface%20with%20blue%20lighting%20and%20innovative%20design%20elements%20professional%20branding&width=400&height=500&seq=port10&orientation=portrait',
+      image: 'https://img.freepik.com/premium-vector/startup-abstract-arrow-technology-innovation-data-up-icon-logo-design-with-business-card-template_216988-538.jpg', 
       description: 'Complete brand development for a robotics startup, from naming to full visual identity and market positioning.',
       challenge: 'Establishing credibility in the competitive robotics industry while appealing to both B2B and consumer markets.',
       solution: 'We created a forward-thinking brand identity that balances technical expertise with approachable design.',
@@ -221,7 +221,7 @@ const Portfolio = () => {
       categoryLabel: 'Print Design',
       client: 'Innovation Summit 2024',
       duration: '4 weeks',
-      image: 'https://readdy.ai/api/search-image?query=professional%20event%20marketing%20materials%20including%20posters%20brochures%20and%20banners%20with%20modern%20design%20and%20corporate%20colors%20arranged%20on%20white%20background%20conference%20branding%20design&width=400&height=500&seq=port11&orientation=portrait',
+      image: 'https://stocklayouts.com/images/blog/dj-brochures-flyers-posters-marketing-disc-jockeys.jpg',
       description: 'Comprehensive print marketing campaign for a major technology conference, including signage and promotional materials.',
       challenge: 'Creating cohesive materials that work across various formats while maintaining brand consistency and impact.',
       solution: 'We developed a modular design system that adapts seamlessly from business cards to large-format banners.',
@@ -241,7 +241,7 @@ const Portfolio = () => {
       categoryLabel: 'Digital Marketing',
       client: 'Beauty Essentials Co.',
       duration: '6 weeks',
-      image: 'https://readdy.ai/api/search-image?query=beauty%20influencer%20marketing%20campaign%20design%20with%20cosmetic%20products%20and%20social%20media%20graphics%20in%20pink%20and%20gold%20color%20scheme%20on%20marble%20background%20luxury%20beauty%20branding&width=400&height=500&seq=port12&orientation=portrait',
+      image: 'https://media.bazaarvoice.com/Shutterstock_2310810379.png', 
       description: 'Influencer marketing campaign design for a beauty brand, including content templates and brand partnership materials.',
       challenge: 'Creating flexible design assets that maintain brand consistency across different influencer styles and platforms.',
       solution: 'We developed a comprehensive toolkit with customizable templates that preserve brand identity while allowing creative freedom.',
@@ -542,7 +542,7 @@ const Portfolio = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <i className="fas fa-phone text-sm"></i>
-                  <span>+1 (555) 123-4567</span>
+                  <span>+254 (555) 123-4567</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <i className="fas fa-map-marker-alt text-sm"></i>
