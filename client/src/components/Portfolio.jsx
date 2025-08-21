@@ -312,7 +312,7 @@ const Portfolio = () => {
                   setActiveFilter(category.id);
                   setVisibleProjects(9);
                 }}
-                className={`!rounded-button whitespace-nowrap px-6 py-3 text-sm font-medium transition-all cursor-pointer ${
+                className={`rounded-lg whitespace-nowrap px-6 py-3 text-sm font-medium transition-all cursor-pointer ${
                   activeFilter === category.id
                     ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -481,7 +481,7 @@ const Portfolio = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-6 border-t border-gray-100">
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="!rounded-button whitespace-nowrap border-2 border-gray-300 text-gray-700 px-6 py-3 font-semibold hover:border-blue-600 hover:text-blue-600 transition-all cursor-pointer"
+                  className="rounded-lg whitespace-nowrap border-2 border-gray-300 text-gray-700 px-6 py-3 font-semibold hover:border-blue-600 hover:text-blue-600 transition-all cursor-pointer"
                 >
                   Close Details
                 </button>

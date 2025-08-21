@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -45,86 +45,15 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white pt-16">
       {/* Add Font Awesome CSS */}
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-      
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <i className="fas fa-palette text-white text-sm"></i>
-              </div>
-              <span className="text-xl font-bold text-gray-900">CreativeStudio</span>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a 
-                href="https://readdy.ai/home/6cca85bc-28d3-4309-9c2b-5cc6aa025a46/91c23562-f883-4364-8fab-84c9baca2feb" 
-                data-readdy="true"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors cursor-pointer whitespace-nowrap"
-              >
-                Home
-              </a>
-              <button type="button" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors cursor-pointer whitespace-nowrap">
-                About
-              </button>
-              <button type="button" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors cursor-pointer whitespace-nowrap">
-                Services
-              </button>
-              <button type="button" className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors cursor-pointer whitespace-nowrap">
-                Portfolio
-              </button>
-              <button type="button" className="px-3 py-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600 transition-colors cursor-pointer whitespace-nowrap">
-                Contact
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 cursor-pointer"
-            >
-              <i className={`fas ${mobileMenuOpen ? 'fa-times' : 'fa-bars'} text-gray-700`}></i>
-            </button>
-          </div>
-
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <div className="md:hidden py-4 border-t border-gray-100">
-              <a 
-                href="https://readdy.ai/home/6cca85bc-28d3-4309-9c2b-5cc6aa025a46/91c23562-f883-4364-8fab-84c9baca2feb" 
-                data-readdy="true"
-                className="block w-full text-left px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
-                Home
-              </a>
-              <button type="button" className="block w-full text-left px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
-                About
-              </button>
-              <button type="button" className="block w-full text-left px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
-                Services
-              </button>
-              <button type="button" className="block w-full text-left px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors cursor-pointer">
-                Portfolio
-              </button>
-              <button type="button" className="block w-full text-left px-3 py-2 text-sm font-medium text-blue-600 transition-colors cursor-pointer">
-                Contact
-              </button>
-            </div>
-          )}
-        </div>
-      </nav>
 
       {/* Hero Section */}
       <section 
         className="relative pt-24 pb-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden"
         style={{
-          backgroundImage: `url('https://readdy.ai/api/search-image?query=modern%20creative%20office%20workspace%20with%20clean%20white%20walls%20and%20blue%20purple%20gradient%20lighting%20effects%20professional%20business%20environment%20with%20minimalist%20design%20elements%20and%20contemporary%20furniture%20perfect%20for%20creative%20studio%20contact%20page&width=1440&height=600&seq=contact-hero&orientation=landscape')`,
+          backgroundImage: `url(https://citiesofthefuture.eu/wp-content/uploads/2020/11/modern-architecture-4749683.jpg)`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}
@@ -248,8 +177,7 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Find Us</h3>
                 <div className="relative overflow-hidden rounded-2xl h-64 bg-gray-100">
                   <img
-                    src="https://readdy.ai/api/search-image?query=modern%20office%20building%20location%20map%20view%20with%20clean%20streets%20and%20urban%20environment%20professional%20business%20district%20with%20contemporary%20architecture%20and%20clear%20signage%20aerial%20perspective&width=500&height=300&seq=office-map&orientation=landscape"
-                    alt="CreativeStudio office location on map"
+                    src="https://citiesofthefuture.eu/wp-content/uploads/2020/11/modern-architecture-4749683.jpg"                   alt="CreativeStudio office location on map"
                     className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -384,7 +312,7 @@ const Contact = () => {
                     <option value="discuss">Let&apos;s Discuss</option>
                   </select>
                   <i className="fas fa-chevron-down absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"></i>
-                </div>
+                  </div>
               </div>
 
               <div>
@@ -421,14 +349,13 @@ const Contact = () => {
                     </>
                   )}
                 </button>
-                <a
-                  href="https://readdy.ai/home/6cca85bc-28d3-4309-9c2b-5cc6aa025a46/91c23562-f883-4364-8fab-84c9baca2feb"
-                  data-readdy="true"
+                <Link
+                  to="/home"
                   className="rounded-lg whitespace-nowrap border-2 border-gray-300 text-gray-700 px-8 py-4 font-semibold hover:border-blue-600 hover:text-blue-600 transition-all cursor-pointer text-center flex items-center justify-center"
                 >
                   <i className="fas fa-arrow-left mr-2"></i>
                   Back to Home
-                </a>
+                </Link>
               </div>
             </form>
           </div>

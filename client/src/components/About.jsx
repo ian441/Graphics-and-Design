@@ -32,28 +32,28 @@ const About = () => {
       name: 'Sarah Johnson',
       position: 'Chief Executive Officer',
       bio: 'With over 15 years of industry experience, Sarah leads our vision for innovation and growth in the digital transformation space.',
-      image: 'https://readdy.ai/api/search-image?query=professional%20business%20woman%20CEO%20executive%20portrait&width=300&height=300&seq=team1',
+      image: '',
       social: { linkedin: '#', twitter: '#' }
     },
     {
       name: 'Michael Chen',
       position: 'Chief Technology Officer',
       bio: 'Michael brings deep technical expertise and strategic thinking to drive our technology initiatives and product development roadmap.',
-      image: 'https://readdy.ai/api/search-image?query=professional%20business%20man%20CTO&width=300&height=300&seq=team2',
+      image: '',
       social: { linkedin: '#', github: '#' }
     },
     {
       name: 'Emily Rodriguez',
       position: 'Head of Design',
       bio: 'Emily crafts beautiful and intuitive user experiences that bridge the gap between complex functionality and elegant simplicity.',
-      image: 'https://readdy.ai/api/search-image?query=professional%20business%20woman%20designer&width=300&height=300&seq=team3',
-      social: { linkedin: '#', dribbble: '#' }
+      image: '',
+     social: { linkedin: '#', dribbble: '#' }
     },
     {
       name: 'David Thompson',
       position: 'VP of Operations',
       bio: 'David ensures operational excellence and scalable processes that enable our team to deliver exceptional results consistently.',
-      image: 'https://readdy.ai/api/search-image?query=professional%20business%20man%20executive&width=300&height=300&seq=team4',
+      image: '',
       social: { linkedin: '#', twitter: '#' }
     }
   ];
@@ -267,7 +267,7 @@ const About = () => {
             </div>
             <div>
               <img
-                src="https://readdy.ai/api/search-image?query=modern%20office%20building%20with%20glass%20facade%20and%20innovative%20architecture%20representing%20growth%20and%20success%20in%20business%20technology%20company%20headquarters%20with%20clean%20contemporary%20design&width=600&height=400&seq=story1&orientation=landscape"
+                src= "https://images.unsplash.com/photo-1560179707-f14e90ef3623?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcGFueSUyMGJ1aWxkaW5nfGVufDB8fDB8fHww"
                 alt="Company headquarters"
                 className="rounded-lg shadow-lg w-full h-full object-cover object-top"
               />
@@ -292,12 +292,12 @@ const About = () => {
             <div className="text-center">
               <i className="fas fa-phone text-3xl mb-4 text-blue-200"></i>
               <h3 className="font-bold mb-2">Call Us</h3>
-              <p className="text-blue-100">+1 (555) 123-4567</p>
+              <p className="text-blue-100">+254 (555) 123-4567</p>
             </div>
             <div className="text-center">
               <i className="fas fa-map-marker-alt text-3xl mb-4 text-blue-200"></i>
               <h3 className="font-bold mb-2">Visit Us</h3>
-              <p className="text-blue-100">123 Innovation Drive<br />San Francisco, CA 94105</p>
+              <p className="text-blue-100">123 Innovation Drive<br />Nairobi, Kenya</p>
             </div>
           </div>
           <div className="flex justify-center space-x-6">

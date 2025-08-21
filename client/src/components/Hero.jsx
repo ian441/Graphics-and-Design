@@ -19,20 +19,19 @@ const Hero = () => {
       id: 1,
       title: 'Brand Identity Design',
       category: 'Branding',
-      image: 'https://readdy.ai/api/search-image?query=modern%20minimalist%20brand%20identity%20design%20showcase%20with%20clean%20geometric%20logo%20and%20business%20cards%20on%20white%20marble%20surface%20with%20soft%20natural%20lighting%20and%20professional%20presentation&width=400&height=300&seq=work1&orientation=landscape'
-    },
+      image: 'https://reallygooddesigns.com/wp-content/uploads/2023/01/Nextra-Clothing-Brand-Identity.jpg'
+        },
     {
       id: 2,
       title: 'Website Redesign',
       category: 'Web Design',
-      image: 'https://readdy.ai/api/search-image?query=sleek%20modern%20website%20design%20mockup%20displayed%20on%20laptop%20screen%20with%20clean%20interface%20and%20contemporary%20layout%20on%20white%20marble%20surface%20with%20soft%20professional%20lighting&width=400&height=300&seq=work2&orientation=landscape'
-    },
+      image: 'https://www.mainteractive.com/wp-content/uploads/2017/08/revealing-our-2020-new-website-design-ma-interactive-blog-post-cover-img2.jpg'
+        },
     {
       id: 3,
       title: 'Marketing Campaign',
       category: 'Digital Marketing',
-      image: 'https://readdy.ai/api/search-image?query=creative%20marketing%20campaign%20materials%20including%20posters%20and%20digital%20assets%20arranged%20professionally%20on%20white%20marble%20surface%20with%20modern%20design%20elements%20and%20soft%20lighting&width=400&height=300&seq=work3&orientation=landscape'
-    }
+      image: 'https://turtl.co/hs-fs/hubfs/Blog%20imagery/Upwork-Hey-World-1024x640-1-768x480.jpeg?width=768&height=480&name=Upwork-Hey-World-1024x640-1-768x480.jpeg'    }
   ];
 
   const testimonials = [
@@ -41,15 +40,15 @@ const Hero = () => {
       name: 'Sarah Johnson',
       company: 'Tech Innovations Inc.',
       text: 'The team delivered exceptional results that exceeded our expectations. Their creative approach transformed our brand identity completely.',
-      avatar: 'https://readdy.ai/api/search-image?query=professional%20business%20woman%20headshot%20with%20confident%20smile%20wearing%20modern%20business%20attire%20against%20clean%20white%20background%20with%20soft%20professional%20lighting&width=80&height=80&seq=avatar1&orientation=squarish'
-    },
+      avatar: ''
+       },
     {
       id: 2,
       name: 'Michael Chen',
       company: 'StartUp Solutions',
       text: 'Outstanding creativity and professionalism. They understood our vision perfectly and brought it to life with stunning visual design.',
-      avatar: 'https://readdy.ai/api/search-image?query=professional%20business%20man%20headshot%20with%20friendly%20smile%20wearing%20contemporary%20business%20attire%20against%20clean%20white%20background%20with%20soft%20professional%20lighting&width=80&height=80&seq=avatar2&orientation=squarish'
-    }
+      avatar: ''
+      }
   ];
 
   const stats = [
@@ -66,8 +65,8 @@ const Hero = () => {
         <section 
   className="relative min-h-screen flex items-center bg-cover bg-center"
   style={{
-    backgroundImage: `url('https://readdy.ai/api/search-image?query=modern%20creative%20design%20studio%20workspace%20with%20sleek%20computers%20and%20design%20materials%20arranged%20professionally%20on%20white%20desk%20with%20soft%20natural%20lighting%20and%20contemporary%20office%20environment%20creating%20inspiring%20atmosphere&width=1440&height=900&seq=hero1&orientation=landscape')`,
-  }}
+    backgroundImage: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRdvhTZ913h2wKpT0ywZ1XcR52RNnYbOeMmw&s'),
+      }}
 >
   {/* Overlay */}
   <div className="absolute inset-0 bg-blue-900 opacity-60 z-0"></div>
@@ -267,15 +266,15 @@ const Hero = () => {
               <div className="space-y-2 text-gray-400">
                 <div className="flex items-center space-x-2">
                   <i className="fas fa-envelope text-sm"></i>
-                  <span>hello@creativestudio.com</span>
+                  <span>Almasi@creativestudio.com</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <i className="fas fa-phone text-sm"></i>
-                  <span>+1 (555) 123-4567</span>
+                  <span>+254 (799) 914-446</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <i className="fas fa-map-marker-alt text-sm"></i>
-                  <span>123 Design Street, Creative City</span>
+                  <span>Kimathi Design Street, Nairobi</span>
                 </div>
               </div>
             </div>
