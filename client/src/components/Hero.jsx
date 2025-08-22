@@ -1,18 +1,8 @@
 // The exported code uses Tailwind CSS. Install Tailwind CSS in your dev environment to ensure all styles work.
 
-import React, { useState } from 'react';
+import React from 'react';
 
 const Hero = () => {
-  const [activeNav, setActiveNav] = useState('home');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'services', label: 'Services' },
-    { id: 'portfolio', label: 'Portfolio' },
-    { id: 'contact', label: 'Contact' }
-  ];
 
   const featuredWorks = [
     {
@@ -65,7 +55,7 @@ const Hero = () => {
         <section 
   className="relative min-h-screen flex items-center bg-cover bg-center"
   style={{
-    backgroundImage: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRdvhTZ913h2wKpT0ywZ1XcR52RNnYbOeMmw&s'),
+    backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRdvhTZ913h2wKpT0ywZ1XcR52RNnYbOeMmw&s')`,
       }}
 >
   {/* Overlay */}
