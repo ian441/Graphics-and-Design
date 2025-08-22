@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { createContact } from '../services/api';
+import { DEFAULT_CONFIG } from '../config';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,31 +25,36 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        projectType: '',
-        budget: '',
-        message: ''
-      });
+    setSubmitStatus('idle');
+
+    try {
+      const response = await createContact(formData);
       
-      setTimeout(() => {
-        setSubmitStatus('idle');
-      }, 5000);
-    }, 2000);
+      if (response.success) {
+        setSubmitStatus('success');
+        setFormData({ 
+          name: '', 
+          email: '', 
+          company: '', 
+          projectType: '', 
+          budget: '', 
+          message: '' 
+        });
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+        console.error('Submission failed:', response.message);
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-white pt-16">
-      {/* Add Font Awesome CSS */}
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section 
         className="relative pt-24 pb-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 overflow-hidden"
@@ -216,6 +222,17 @@ const Contact = () => {
                 </div>
               </div>
             )}
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                <div className="flex items-center">
+                  <i className="fas fa-exclamation-circle text-red-600 mr-3"></i>
+                  <div>
+                    <h3 className="font-semibold text-red-800">Submission Failed!</h3>
+                    <p className="text-red-700 text-sm">Something went wrong. Please try again.</p>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -230,9 +247,13 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
+                    maxLength={DEFAULT_CONFIG.contact.maxNameLength}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm"
                     placeholder="Enter your full name"
                   />
+                  <div className="text-xs text-gray-500 text-right mt-1">
+                    {formData.name.length}/{DEFAULT_CONFIG.contact.maxNameLength} characters
+                  </div>
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
@@ -262,9 +283,13 @@ const Contact = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
+                    maxLength={DEFAULT_CONFIG.contact.maxCompanyLength}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm"
                     placeholder="Enter your company name"
                   />
+                  <div className="text-xs text-gray-500 text-right mt-1">
+                    {formData.company.length}/{DEFAULT_CONFIG.contact.maxCompanyLength} characters
+                  </div>
                 </div>
                 <div>
                   <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 mb-2">
@@ -319,16 +344,20 @@ const Contact = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                   Project Details *
                 </label>
-                <textarea
+                  <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   required
                   rows={6}
+                  maxLength={DEFAULT_CONFIG.contact.maxMessageLength}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all text-sm resize-vertical"
                   placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
                 ></textarea>
+                <div className="text-xs text-gray-500 text-right mt-1">
+                  {formData.message.length}/{DEFAULT_CONFIG.contact.maxMessageLength} characters
+                </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
@@ -349,111 +378,19 @@ const Contact = () => {
                     </>
                   )}
                 </button>
-                <Link
-                  to="/home"
+                <a
+                  href="/"
                   className="rounded-lg whitespace-nowrap border-2 border-gray-300 text-gray-700 px-8 py-4 font-semibold hover:border-blue-600 hover:text-blue-600 transition-all cursor-pointer text-center flex items-center justify-center"
                 >
                   <i className="fas fa-arrow-left mr-2"></i>
                   Back to Home
-                </Link>
+                </a>
               </div>
             </form>
           </div>
         </div>
       </section>
 
-      {/* Call to Action Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="space-y-6">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">
-              Ready to Start Your Creative Journey?
-            </h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Join over 100+ satisfied clients who have transformed their brands with our creative expertise. Let's discuss your project today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-              <button type="button" className="rounded-lg whitespace-nowrap bg-white text-blue-600 px-8 py-4 font-semibold hover:bg-gray-100 transition-all cursor-pointer">
-                <i className="fas fa-calendar-alt mr-2"></i>
-                Schedule a Call
-              </button>
-              <button type="button" className="rounded-lg whitespace-nowrap border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white hover:text-blue-600 transition-all cursor-pointer">
-                <i className="fas fa-download mr-2"></i>
-                Download Portfolio
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <i className="fas fa-palette text-white text-sm"></i>
-                </div>
-                <span className="text-xl font-bold">CreativeStudio</span>
-              </div>
-              <p className="text-gray-400">
-                Transforming visions into stunning visual experiences that captivate and inspire.
-              </p>
-              <div className="flex space-x-4">
-                <i className="fab fa-facebook text-gray-400 hover:text-white cursor-pointer transition-colors"></i>
-                <i className="fab fa-twitter text-gray-400 hover:text-white cursor-pointer transition-colors"></i>
-                <i className="fab fa-instagram text-gray-400 hover:text-white cursor-pointer transition-colors"></i>
-                <i className="fab fa-linkedin text-gray-400 hover:text-white cursor-pointer transition-colors"></i>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Services</h3>
-              <ul className="space-y-2 text-gray-400">
-                {['Brand Identity', 'Web Design', 'Digital Marketing', 'Print Design'].map((service, index) => (
-                  <li key={index} className="hover:text-white cursor-pointer transition-colors">
-                    {service}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-gray-400">
-                {['About Us', 'Our Team', 'Careers', 'Contact'].map((item, index) => (
-                  <li key={index} className="hover:text-white cursor-pointer transition-colors">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
-              <div className="space-y-2 text-gray-400">
-                <div className="flex items-center space-x-2">
-                  <i className="fas fa-envelope text-sm"></i>
-                  <span>hello@creativestudio.com</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <i className="fas fa-phone text-sm"></i>
-                  <span>+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <i className="fas fa-map-marker-alt text-sm"></i>
-                  <span>123 Design Street, Creative City</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 CreativeStudio. All rights reserved. | Privacy Policy | Terms of Service</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
