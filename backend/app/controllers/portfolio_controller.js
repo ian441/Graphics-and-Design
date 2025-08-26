@@ -1,4 +1,6 @@
-const { PortfolioProject, PortfolioCategory } = require('../models');
+const PortfolioProject = require('../models/portfolio_project');
+const PortfolioCategory = require('../models/portfolio_category');
+const { pool } = require('../../db');
 
 class PortfolioController {
   // Get all projects with optional filtering

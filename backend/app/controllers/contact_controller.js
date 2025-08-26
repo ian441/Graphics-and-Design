@@ -1,4 +1,4 @@
-const { ContactSubmission } = require('../models');
+const ContactSubmission = require('../models/contact_submission');
 
 class ContactController {
   // Create a new contact submission

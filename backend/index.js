@@ -11,9 +11,11 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Create tables and insert sample data
-createTables();
-insertSampleData();
+// Only create tables and insert data if not in test environment
+if (process.env.NODE_ENV !== 'test') {
+  createTables();
+  insertSampleData();
+}
 
 // API Routes
 app.use('/api/auth', authRoutes);
@@ -26,7 +28,12 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Server is running' });
 });
 
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// Only start the server if not in test environment
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+}
+
+// Export the app for testing
+module.exports = app;
