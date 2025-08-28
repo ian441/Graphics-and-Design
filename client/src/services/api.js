@@ -61,6 +61,30 @@ export const fetchProjectsByCategory = async (category, limit = 12) => {
   return apiFetch(`/api/portfolio?category=${category}&limit=${limit}`);
 };
 
+// Authentication API
+export const loginUser = async (credentials) => {
+  return apiFetch('/api/auth/login', {
+    method: 'POST',
+    body: JSON.stringify(credentials),
+  });
+};
+
+export const registerUser = async (userData) => {
+  return apiFetch('/api/auth/register', {
+    method: 'POST',
+    body: JSON.stringify(userData),
+  });
+};
+
+export const getProfile = async () => {
+  const token = localStorage.getItem('token');
+  return apiFetch('/api/auth/profile', {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+  });
+};
+
 // Utility function for error handling
 export const handleApiError = (error) => {
   console.error('API Error:', error);

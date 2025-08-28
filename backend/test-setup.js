@@ -3,10 +3,10 @@ const { Pool } = require('pg');
 
 // Mock environment variables for testing
 process.env.NODE_ENV = 'test';
-process.env.DB_USER = 'test_user';
+process.env.DB_USER = 'ayro5'; 
 process.env.DB_HOST = 'localhost';
-process.env.DB_NAME = 'portfolio_test_db';
-process.env.DB_PASSWORD = 'test_password';
+process.env.DB_NAME = 'portfolio_db'; 
+process.env.DB_PASSWORD = '4the9t'; 
 process.env.DB_PORT = '5432';
 process.env.PORT = '5001';
 

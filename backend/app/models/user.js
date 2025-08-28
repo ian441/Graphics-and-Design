@@ -1,4 +1,5 @@
 const { pool } = require('../../db');
+const bcrypt = require('bcrypt');
 
 class User {
   constructor({ id, email, password, created_at }) {
@@ -11,6 +12,10 @@ class User {
   // Create a new user
   static async create(userData) {
     const { email, password } = userData;
+    
+    // Hash the password before storing
+    const saltRounds = 10;
+    const hashedPassword = await bcrypt.hash(password, saltRounds);
 
     const query = `
       INSERT INTO users (email, password)
@@ -19,7 +24,7 @@ class User {
     `;
 
     try {
-      const result = await pool.query(query, [email, password]);
+      const result = await pool.query(query, [email, hashedPassword]);
       return new User(result.rows[0]);
     } catch (error) {
       throw new Error(`Error creating user: ${error.message}`);
@@ -56,10 +61,9 @@ class User {
     }
   }
 
-  // Verify password (placeholder for actual password verification logic)
+  // Verify password
   async verifyPassword(password) {
-    // Implement password verification logic (e.g., using bcrypt)
-    return this.password === password; // Placeholder comparison
+    return await bcrypt.compare(password, this.password);
   }
 }
 
