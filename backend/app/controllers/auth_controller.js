@@ -1,4 +1,8 @@
 const User = require('../models/user');
+const jwt = require('jsonwebtoken');
+
+const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret_key';
+const JWT_EXPIRES_IN = '1h';
 
 class AuthController {
   // Register a new user
@@ -35,8 +39,12 @@ class AuthController {
         });
       }
 
-      // Generate token logic would go here
-      const token = 'generated_token'; // Placeholder
+      // Generate JWT token
+      const token = jwt.sign(
+        { id: user.id, email: user.email },
+        JWT_SECRET,
+        { expiresIn: JWT_EXPIRES_IN }
+      );
 
       res.json({
         success: true,
@@ -56,7 +64,7 @@ class AuthController {
   // Get user profile
   static async getProfile(req, res) {
     try {
-      const userId = req.user.id; // Assuming user ID is set in the request
+      const userId = req.user.id; // Set by auth middleware
       const user = await User.findById(userId);
 
       if (!user) {

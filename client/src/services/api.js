@@ -61,6 +61,16 @@ export const fetchProjectsByCategory = async (category, limit = 12) => {
   return apiFetch(`/api/portfolio?category=${category}&limit=${limit}`);
 };
 
+// Get projects by authenticated user
+export const fetchProjectsByClient = async () => {
+  const token = localStorage.getItem('token');
+  return apiFetch('/api/portfolio/my-projects', {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+    },
+  });
+};
+
 // Authentication API
 export const loginUser = async (credentials) => {
   return apiFetch('/api/auth/login', {

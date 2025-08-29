@@ -213,6 +213,30 @@ class PortfolioController {
     }
   }
 
+  // Get projects by client (user)
+  static async getProjectsByClient(req, res) {
+    try {
+      const clientEmail = req.user.email; // Get email from authenticated user
+      
+      const query = 'SELECT * FROM portfolio_projects WHERE client = $1 ORDER BY created_at DESC';
+      
+      const result = await pool.query(query, [clientEmail]);
+      const projects = result.rows.map(row => new PortfolioProject(row));
+
+      res.json({
+        success: true,
+        data: projects
+      });
+    } catch (error) {
+      console.error('Error fetching projects by client:', error);
+      res.status(500).json({
+        success: false,
+        message: 'Failed to fetch projects for client',
+        error: error.message
+      });
+    }
+  }
+
   // Helper method to get project count
   static async getProjectCount(filters = {}) {
     let query = 'SELECT COUNT(*) FROM portfolio_projects WHERE 1=1';

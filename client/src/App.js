@@ -6,7 +6,8 @@ import About from './components/About';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
-import Login from './components/Login';
+import Login from './components/SignIn';
+import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>

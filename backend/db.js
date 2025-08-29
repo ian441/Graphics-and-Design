@@ -3,10 +3,10 @@ require('dotenv').config();
 
 // Create a new PostgreSQL connection pool
 const pool = new Pool({
-  user: process.env.DB_USER || 'postgres',
+  user: process.env.DB_USER || 'ayro5',
   host: process.env.DB_HOST || 'localhost',
   database: process.env.DB_NAME || 'portfolio_db',
-  password: process.env.DB_PASSWORD || 'password',
+  password: process.env.DB_PASSWORD || '4the9t',
   port: process.env.DB_PORT || 5432,
 });
 

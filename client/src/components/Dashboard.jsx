@@ -1,28 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import { getProfile } from '../services/api';
+import { getProfile, fetchProjectsByClient } from '../services/api';
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
+  const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const fetchProfile = async () => {
+    const fetchData = async () => {
       try {
-        const data = await getProfile();
-        if (data.success) {
-          setUser(data.data);
+        const profileData = await getProfile();
+        if (profileData.success) {
+          setUser(profileData.data);
+          // Fetch projects for the authenticated user
+          const projectsData = await fetchProjectsByClient();
+          if (projectsData.success) {
+            setProjects(projectsData.data);
+          } else {
+            setError('Failed to fetch projects');
+          }
         } else {
-          setError(data.message);
+          setError(profileData.message);
         }
       } catch (err) {
-        setError('Failed to fetch profile');
+        setError('Failed to fetch profile or projects');
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProfile();
+    fetchData();
   }, []);
 
   if (loading) {
@@ -38,10 +46,23 @@ const Dashboard = () => {
       <h2>Dashboard</h2>
       {user && (
         <div>
-          <p>Welcome, {user.email}!</p>
-          <p>User ID: {user.id}</p>
-          <p>Account created: {new Date(user.created_at).toLocaleDateString()}</p>
+          <p><strong>Username:</strong> {user.email}</p>
+          <p><strong>Email:</strong> {user.email}</p>
+          <p><strong>Account ID:</strong> {user.id}</p>
+          <p><strong>Member Since:</strong> {new Date(user.created_at).toLocaleDateString()}</p>
         </div>
+      )}
+      <h3>Projects for You</h3>
+      {projects.length === 0 ? (
+        <p>No projects found.</p>
+      ) : (
+        <ul>
+          {projects.map(project => (
+            <li key={project.id}>
+              <strong>{project.title}</strong> - {project.description}
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );

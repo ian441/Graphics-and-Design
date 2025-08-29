@@ -1,5 +1,6 @@
 const express = require('express');
 const PortfolioController = require('../controllers/portfolio_controller');
+const { authenticateToken } = require('../middleware/auth');
 
 const router = express.Router();
 
@@ -17,6 +18,9 @@ router.get('/featured', PortfolioController.getFeaturedProjects);
 
 // Get projects by category
 router.get('/category/:category', PortfolioController.getProjectsByCategory);
+
+// Get projects by client (user) - protected route
+router.get('/my-projects', authenticateToken, PortfolioController.getProjectsByClient);
 
 // Create new project (admin only)
 router.post('/', PortfolioController.createProject);
