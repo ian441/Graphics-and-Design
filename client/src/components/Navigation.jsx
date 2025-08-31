@@ -11,7 +11,7 @@ const Navigation = () => {
     { id: 'services', label: 'Services', path: '/services' },
     { id: 'portfolio', label: 'Portfolio', path: '/portfolio' },
     { id: 'contact', label: 'Contact', path: '/contact' },
-    { id: 'login', label: 'Login', path: '/login' }
+    { id: 'login', label: 'Login', path: '/signin' }
   ];
 
   const isActive = (path) => {
