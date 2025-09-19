@@ -32,28 +32,28 @@ const About = () => {
       name: 'Sarah Johnson',
       position: 'Chief Executive Officer',
       bio: 'With over 15 years of industry experience, Sarah leads our vision for innovation and growth in the digital transformation space.',
-      image: '',
+      image: 'https://via.placeholder.com/150x150/4F46E5/FFFFFF?text=SJ',
       social: { linkedin: '#', twitter: '#' }
     },
     {
       name: 'Michael Chen',
       position: 'Chief Technology Officer',
       bio: 'Michael brings deep technical expertise and strategic thinking to drive our technology initiatives and product development roadmap.',
-      image: '',
+      image: 'https://via.placeholder.com/150x150/059669/FFFFFF?text=MC',
       social: { linkedin: '#', github: '#' }
     },
     {
       name: 'Emily Rodriguez',
       position: 'Head of Design',
       bio: 'Emily crafts beautiful and intuitive user experiences that bridge the gap between complex functionality and elegant simplicity.',
-      image: '',
-     social: { linkedin: '#', dribbble: '#' }
+      image: 'https://via.placeholder.com/150x150/DC2626/FFFFFF?text=ER',
+      social: { linkedin: '#', dribbble: '#' }
     },
     {
       name: 'David Thompson',
       position: 'VP of Operations',
       bio: 'David ensures operational excellence and scalable processes that enable our team to deliver exceptional results consistently.',
-      image: '',
+      image: 'https://via.placeholder.com/150x150/7C3AED/FFFFFF?text=DT',
       social: { linkedin: '#', twitter: '#' }
     }
   ];
