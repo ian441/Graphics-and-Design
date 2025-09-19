@@ -132,47 +132,90 @@ const About = () => {
         .milestone-item:last-child::after {
           display: none;
         }
+
+        .glow {
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
       `}</style>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-20">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className={`text-6xl font-bold text-gray-900 mb-6 fade-in`}>
-            About Us
-          </h1>
-          <p className={`text-xl text-gray-600 max-w-3xl mx-auto fade-in`} style={{ transitionDelay: '0.2s' }}>
-            We are a forward-thinking company dedicated to creating innovative solutions that drive meaningful change and deliver exceptional value to our clients worldwide.
-          </p>
+      <section className="relative pt-20 pb-20 min-h-[80vh]  bg-gradient-to-r from-black to-gray-600 ">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+            <div>
+              <h1 className={`text-6xl font-bold text-white mb-6 fade-in`}>
+                About Us
+              </h1>
+              <p className={`text-xl text-white mb-12 max-w-3xl fade-in`} style={{ transitionDelay: '0.2s' }}>
+                We are a forward-thinking company dedicated to creating innovative solutions that drive meaningful change and deliver exceptional value to our clients worldwide.
+              </p>
+              <div className="grid md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <i className="fas fa-envelope text-3xl mb-4 text-blue-200"></i>
+                  <h3 className="font-bold mb-2 text-white">Email Us</h3>
+                  <p className="text-blue-100">hello@innovatecorp.com</p>
+                </div>
+                <div className="text-center">
+                  <i className="fas fa-phone text-3xl mb-4 text-blue-200"></i>
+                  <h3 className="font-bold mb-2 text-white">Call Us</h3>
+                  <p className="text-blue-100">+254 (555) 123-4567</p>
+                </div>
+                <div className="text-center">
+                  <i className="fas fa-map-marker-alt text-3xl mb-4 text-blue-200"></i>
+                  <h3 className="font-bold mb-2 text-white">Visit Us</h3>
+                  <p className="text-blue-100">123 Innovation Drive<br />Nairobi, Kenya</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <img
+                src="/images/IMG-20250903-WA0000.jpg"
+                alt="About Us"
+                className="w-80 h-80 object-cover rounded-lg glow hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Mission Statement */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="mb-8">
-            <i className="fas fa-compass text-4xl text-blue-600 mb-6"></i>
+      {/* Mission Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="flex justify-center">
+              <img
+                src="https://png.pngtree.com/thumb_back/fh260/background/20230624/pngtree-blue-bar-graph-3d-icon-against-black-background-image_3664034.jpg"
+                alt="Business Development"
+                className="w-full h-80 object-cover rounded-lg  hover:scale-105 transition-all duration-300"
+              />
+            </div>
+            <div>
+              <div className="mb-8">
+                <i className="fas fa-compass text-4xl text-blue-400 mb-6"></i>
+              </div>
+              <h2 className="text-4xl font-bold text-white mb-8 leading-tight">
+                Our mission is to empower businesses through innovative technology solutions that transform challenges into opportunities for sustainable growth.
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                We believe that every challenge presents an opportunity for innovation. Our dedicated team works tirelessly to understand your unique needs and deliver solutions that not only meet your current requirements but also position you for future success in an ever-evolving digital landscape.
+              </p>
+            </div>
           </div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-8 leading-tight">
-            Our mission is to empower businesses through innovative technology solutions that transform challenges into opportunities for sustainable growth.
-          </h2>
-          <p className="text-lg text-gray-600 leading-relaxed">
-            We believe that every challenge presents an opportunity for innovation. Our dedicated team works tirelessly to understand your unique needs and deliver solutions that not only meet your current requirements but also position you for future success in an ever-evolving digital landscape.
-          </p>
         </div>
       </section>
 
       {/* Core Values */}
-      <section className="py-20 bg-gray-50">
+<section className="py-20 bg-gradient-to-r from-gray-500 to-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Core Values</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 justify-center">
             {coreValues.map((value, index) => (
               <div
                 key={index}
-                className={`bg-white p-8 rounded-lg text-center hover-lift cursor-pointer ${
+                className={`bg-black bg-opacity-40 backdrop-blur-md max-w-sm p-8 rounded-lg text-center hover-lift cursor-pointer ${
                   hoveredValue === index ? 'ring-2 ring-blue-500' : ''
                 }`}
                 onMouseEnter={() => setHoveredValue(index)}
@@ -181,8 +224,8 @@ const About = () => {
                 <div className="mb-6">
                   <i className={`${value.icon} text-4xl text-blue-600`}></i>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{value.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                <h3 className="text-2xl font-bold text-white mb-4">{value.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
@@ -190,20 +233,28 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+      <section
+        className="py-20 relative"
+        style={{
+          backgroundImage: 'url(/images/favpng_808fb19e50dd0de8ebcd49184f7119c7.png)',
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-80"></div>
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16 text-white relative z-10">
+            <h2 className="text-4xl font-bold mb-4">Meet Our Team</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg max-w-2xl mx-auto">
               Our diverse team of experts brings together years of experience and a passion for innovation to deliver exceptional results for our clients.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className={`team-card bg-white rounded-lg p-6 text-center cursor-pointer ${
+                className={`team-card bg-gradient-to-br from-black to-gray-900 rounded-lg p-6 text-center cursor-pointer ${
                   hoveredTeam === index ? 'ring-2 ring-blue-500' : ''
                 }`}
                 onMouseEnter={() => setHoveredTeam(index)}
@@ -216,15 +267,15 @@ const About = () => {
                     className="w-32 h-32 rounded-full mx-auto object-cover object-top"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-blue-600 font-medium mb-4">{member.position}</p>
-                <p className="text-gray-600 text-sm leading-relaxed mb-4">{member.bio}</p>
+                <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
+                <p className="text-blue-300 font-medium mb-4">{member.position}</p>
+                <p className="text-gray-300 text-sm leading-relaxed mb-4">{member.bio}</p>
                 <div className="social-links flex justify-center space-x-4">
                   {Object.entries(member.social).map(([platform, url]) => (
                     <a
                       key={platform}
                       href={url}
-                      className="text-gray-400 hover:text-blue-600 transition-colors cursor-pointer"
+                      className="text-gray-300 hover:text-blue-400 transition-colors cursor-pointer"
                     >
                       <i className={`fab fa-${platform} text-lg`}></i>
                     </a>
@@ -237,15 +288,15 @@ const About = () => {
       </section>
 
       {/* Company Story */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-8">Our Story</h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              <h2 className="text-4xl font-bold text-white mb-8">Our Story</h2>
+              <p className="text-lg text-gray-100 mb-6 leading-relaxed">
                 Founded in 2018 with a vision to bridge the gap between complex technology and elegant user experiences, InnovateCorp has grown from a small startup to a globally recognized leader in digital transformation.
               </p>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              <p className="text-lg text-gray-100 mb-8 leading-relaxed">
                 Our journey began when our founders recognized the need for technology solutions that truly understand and serve human needs. Today, we continue to push boundaries and set new standards for innovation in our industry.
               </p>
               
@@ -257,8 +308,8 @@ const About = () => {
                         <span className="text-blue-600 font-bold text-lg">{milestone.year}</span>
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-900 mb-1">{milestone.title}</h4>
-                        <p className="text-gray-600 text-sm">{milestone.description}</p>
+                        <h4 className="font-bold text-blue-600 mb-1">{milestone.title}</h4>
+                        <p className="text-gray-500 text-sm">{milestone.description}</p>
                       </div>
                     </div>
                   </div>
@@ -267,55 +318,15 @@ const About = () => {
             </div>
             <div>
               <img
-                src= "https://images.unsplash.com/photo-1560179707-f14e90ef3623?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcGFueSUyMGJ1aWxkaW5nfGVufDB8fDB8fHww"
+                src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcGFueSUyMGJ1aWxkaW5nfGVufDB8fDB8fHww"
                 alt="Company headquarters"
-                className="rounded-lg shadow-lg w-full h-full object-cover object-top"
+                className="rounded-lg shadow-lg   w-full h-full object-cover object-top"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
-          <p className="text-xl mb-12 text-blue-100">
-            Ready to start your next project? We would love to hear from you and discuss how we can help bring your vision to life.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <i className="fas fa-envelope text-3xl mb-4 text-blue-200"></i>
-              <h3 className="font-bold mb-2">Email Us</h3>
-              <p className="text-blue-100">hello@innovatecorp.com</p>
-            </div>
-            <div className="text-center">
-              <i className="fas fa-phone text-3xl mb-4 text-blue-200"></i>
-              <h3 className="font-bold mb-2">Call Us</h3>
-              <p className="text-blue-100">+254 (555) 123-4567</p>
-            </div>
-            <div className="text-center">
-              <i className="fas fa-map-marker-alt text-3xl mb-4 text-blue-200"></i>
-              <h3 className="font-bold mb-2">Visit Us</h3>
-              <p className="text-blue-100">123 Innovation Drive<br />Nairobi, Kenya</p>
-            </div>
-          </div>
-          <div className="flex justify-center space-x-6">
-            <a href="#" className="text-blue-200 hover:text-white transition-colors cursor-pointer">
-              <i className="fab fa-linkedin text-2xl"></i>
-            </a>
-            <a href="#" className="text-blue-200 hover:text-white transition-colors cursor-pointer">
-              <i className="fab fa-twitter text-2xl"></i>
-            </a>
-            <a href="#" className="text-blue-200 hover:text-white transition-colors cursor-pointer">
-              <i className="fab fa-github text-2xl"></i>
-            </a>
-            <a href="#" className="text-blue-200 hover:text-white transition-colors cursor-pointer">
-              <i className="fab fa-dribbble text-2xl"></i>
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

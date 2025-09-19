@@ -111,25 +111,36 @@ const Services = () => {
     <div className="min-h-screen bg-white">
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Creative Design Services
-          </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Transform your brand with our professional design services. From stunning visuals to engaging motion graphics,
-            we bring your creative vision to life with precision and artistic excellence.
-          </p>
+      <section
+        className="relative w-full bg-no-repeat bg-center bg-contain"
+        style={{
+          backgroundImage: 'url(/images/favpng_85a32b7ee62c40f2dd546e0d920aed4b.png)',
+          backgroundSize: 'contain',
+          backgroundPosition: 'center',
+          height: '80vh',
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-80"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex items-center justify-center h-full">
+          <div>
+            <h1 className="text-5xl font-bold text-white mb-6">
+              Creative Design Services
+            </h1>
+            <p className="text-xl text-white max-w-3xl mx-auto">
+              Transform your brand with our professional design services. From stunning visuals to engaging motion graphics,
+              we bring your creative vision to life with precision and artistic excellence.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Service Categories */}
-      <section id="services" className="py-20 bg-white">
+      <section id="services" className="py-20 bg-gradient-to-r from-black to-gray-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">What We Offer</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl font-bold text-white mb-4">What We Offer</h2>
+            <p className="text-lg text-white max-w-2xl mx-auto">
               Discover our comprehensive range of services designed to meet your business needs
             </p>
           </div>
@@ -188,7 +199,7 @@ const Services = () => {
             {filteredCategories.map((service) => (
               <div 
                 key={service.id} 
-                className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer"
+                className="bg-black rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer"
               >
                 <div className="h-48 overflow-hidden">
                   <img
@@ -203,7 +214,7 @@ const Services = () => {
                     <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
                       <i className={`${service.icon} text-blue-600 text-xl`}></i>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
+                    <h3 className="text-xl font-bold text-white">{service.title}</h3>
                   </div>
                   
                   <p className="text-gray-600 mb-6 leading-relaxed">
@@ -222,7 +233,7 @@ const Services = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-gray-50">
+      <section id="pricing" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center mb-16">
@@ -283,12 +294,12 @@ const Services = () => {
       </section>
 
       {/* Service Details */}
-      <section className="py-20 bg-white">
+      <section className="py-10 bg-black min-h-[50vh]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-10">
             <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">Why Choose Our Services?</h3>
+              <h3 className="text-3xl font-bold text-white mb-6">Why Choose Our Services?</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -296,8 +307,8 @@ const Services = () => {
                     <i className="fas fa-rocket text-blue-600"></i>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">Fast Delivery</h4>
-                    <p className="text-gray-600">Quick turnaround times without compromising on quality</p>
+                    <h4 className="text-lg font-semibold text-blue-800 mb-2">Fast Delivery</h4>
+                    <p className="text-white">Quick turnaround times without compromising on quality</p>
                   </div>
                 </div>
                 
@@ -306,8 +317,8 @@ const Services = () => {
                     <i className="fas fa-shield-alt text-blue-600"></i>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">Reliable Support</h4>
-                    <p className="text-gray-600">24/7 customer support to assist you whenever needed</p>
+                    <h4 className="text-lg font-semibold text-blue-800 mb-2">Reliable Support</h4>
+                    <p className="text-white">24/7 customer support to assist you whenever needed</p>
                   </div>
                 </div>
                 
@@ -316,8 +327,8 @@ const Services = () => {
                     <i className="fas fa-star text-blue-600"></i>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">Premium Quality</h4>
-                    <p className="text-gray-600">Industry-leading standards and best practices</p>
+                    <h4 className="text-lg font-semibold text-blue-800 mb-2">Premium Quality</h4>
+                    <p className="text-white">Industry-leading standards and best practices</p>
                   </div>
                 </div>
               </div>
@@ -325,9 +336,9 @@ const Services = () => {
             
             <div className="relative">
               <img
-                src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202408/top-5-high-paying-jobs-in-graphic-design-for-ambitious-minds-25524067-16x9_0.jpeg?VersionId=1tFF.IRHT.3_iZHXa4d0CPcBuHWb4Ifb&size=690:388"
+                src="/images/favpng_75d90b3a4a334f73e172d8916a8c2e2d.png"
                 alt="Professional team working"
-                className="w-full h-full object-cover object-top rounded-xl shadow-lg"
+                className="w-full min-h-[200px] object-cover object-top rounded-xl shadow-lg"
               />
             </div>
           </div>
@@ -335,7 +346,7 @@ const Services = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-blue-600">
+      <section className="py-20 bg-gradient-to-r from-gray-800 to-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">

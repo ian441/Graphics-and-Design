@@ -1,8 +1,9 @@
 // The exported code uses Tailwind CSS. Install Tailwind CSS in your dev environment to ensure all styles work.
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Hero = () => {
+  const [slideIn, setSlideIn] = useState(false);
 
   const featuredWorks = [
     {
@@ -48,63 +49,75 @@ const Hero = () => {
     { number: '50+', label: 'Happy Clients' }
   ];
 
+  useEffect(() => {
+    setSlideIn(true);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white">
-      <div className="pt-16">
+    <div className="min-h-screen ">
+      <div className="pt-0">
         {/* hero section */}
-        <section 
-  className="relative min-h-screen flex items-center bg-cover bg-center"
-  style={{
-    backgroundImage: `url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRdvhTZ913h2wKpT0ywZ1XcR52RNnYbOeMmw&s')`,
-      }}
->
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-blue-900 opacity-60 z-0"></div>
+        <section className="relative min-h-screen flex items-center overflow-hidden">
+          {/* Background video */}
+          <video
+            className="absolute top-0 left-0 w-full h-full object-cover z-0"
+            src="/images/VID-20250903-WA0001.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
 
-  <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-    <div className="grid lg:grid-cols-2 gap-12 items-center">
-      <div className="space-y-8 text-white">
-        <div className="space-y-4">
-          <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-            Creative Design
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">
-              Solutions
-            </span>
-          </h1>
-          <p className="text-xl max-w-lg text-white/100">
-            We transform your vision into stunning visual experiences that captivate audiences and drive results. From branding to digital design, we craft solutions that make an impact.
-          </p>
-        </div>
+          <div
+            className={`relative z-20 max-w-7xl mx-auto px-6 py-20 transform transition-transform duration-700 ease-out ${
+              slideIn ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
+            }`}
+          >
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8 text-white">
+                <div className="space-y-4 pt-20">
+                  <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
+                    Artika Graphics
+                    <span className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">
+                      Solutions
+                    </span>
+                  </h1>
+                  <p className="text-xl max-w-lg text-white/100">
+                    We transform your vision into stunning visual experiences that captivate audiences and drive results. From branding to digital design, we craft solutions that make an impact.
+                  </p>
+                </div>
 
-        <div className="flex flex-col sm:flex-row gap-4">
-          <button className="!rounded-button bg-white text-blue-600 px-8 py-4 font-semibold hover:shadow-lg transition-all cursor-pointer">
-            View Our Work
-          </button>
-          <button className="!rounded-button border-2 border-white text-white px-8 py-4 font-semibold hover:bg-white hover:text-blue-600 transition-all cursor-pointer">
-            Get Started
-          </button>
-        </div>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="!rounded-button bg-white text-blue-600 px-8 py-4 font-semibold hover:shadow-lg transition-all cursor-pointer">
+                    View Our Work
+                  </button>
+                  <button className="!rounded-button border-2 border-white text-white px-8 py-4 font-semibold hover:bg-orange-600  hover:text-blue-600 transition-all cursor-pointer">
+                    Get Started
+                  </button>
+                </div>
 
-        <div className="flex items-center space-x-8 pt-8">
-          {stats.slice(0, 2).map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-2xl font-bold text-white">{stat.number}</div>
-              <div className="text-sm text-white/80">{stat.label}</div>
+                <div className="flex items-center space-x-8 pt-8">
+                  {stats.slice(0, 2).map((stat, index) => (
+                    <div key={index} className="text-center">
+                      <div className="text-2xl font-bold text-white">{stat.number}</div>
+                      <div className="text-sm text-white/80">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+          </div>
+        </section>
 
 
         {/* Featured Works Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-black">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">Featured Works</h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              <h2 className="text-4xl font-bold text-white mb-4">Featured Works</h2>
+              <p className="text-xl text-white max-w-2xl mx-auto">
                 Explore our latest projects and see how we bring creative visions to life
               </p>
             </div>
@@ -124,14 +137,14 @@ const Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{work.title}</h3>
-                  <p className="text-gray-600">{work.category}</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">{work.title}</h3>
+                  <p className="text-white">{work.category}</p>
                 </div>
               ))}
             </div>
 
             <div className="text-center mt-12">
-              <button className="!rounded-button whitespace-nowrap border-2 border-blue-600 text-blue-600 px-8 py-3 font-semibold hover:bg-blue-600 hover:text-white transition-all cursor-pointer">
+              <button className="!rounded-button whitespace-nowrap border-2 border-gray-300 text-white px-8 py-3 font-semibold hover:bg-orange-600 hover:text-white transition-all cursor-pointer">
                 View All Projects
               </button>
             </div>
@@ -139,43 +152,45 @@ const Hero = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-black">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-              <p className="text-xl text-gray-600">
+              <h2 className="text-4xl font-bold text-white mb-4">What Our Clients Say</h2>
+              <p className="text-xl text-white">
                 Don&apos;t just take our word for it - hear from our satisfied clients
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="bg-white p-8 rounded-2xl shadow-sm">
-                  <div className="flex items-center mb-6">
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover mr-4"
-                    />
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="flex-1 flex flex-col gap-8">
+                {testimonials.map((testimonial) => (
+                  <div key={testimonial.id} className="bg-gray-800 p-8 rounded-2xl shadow-lg flex flex-col justify-between h-full">
                     <div>
-                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                      <div className="text-gray-600 text-sm">{testimonial.company}</div>
+                      <div className="font-semibold text-white">{testimonial.name}</div>
+                      <div className="text-white/80 text-sm mb-4">{testimonial.company}</div>
+                      <p className="text-white leading-relaxed">{testimonial.text}</p>
+                    </div>
+                    <div className="flex text-yellow-400 mt-4">
+                      {[...Array(5)].map((_, i) => (
+                        <i key={i} className="fas fa-star text-sm"></i>
+                      ))}
                     </div>
                   </div>
-                  <p className="text-gray-700 leading-relaxed">{testimonial.text}</p>
-                  <div className="flex text-yellow-400 mt-4">
-                    {[...Array(5)].map((_, i) => (
-                      <i key={i} className="fas fa-star text-sm"></i>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
+              <div className="flex-1 flex justify-center items-center">
+                <img
+                  src="/images/Team5.jpg"
+                  alt="Testimonial Illustration"
+                  className="rounded-3xl object-cover max-h-[400px] w-full"
+                />
+              </div>
             </div>
           </div>
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <section className="py-20 bg-gradient-to-r from-black to-gray-600">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
@@ -189,12 +204,12 @@ const Hero = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-White">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-black mb-4">
               Ready to Start Your Project?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-black mb-8 max-w-2xl mx-auto">
               Let&apos;s collaborate to create something amazing together. Get in touch with our team today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
