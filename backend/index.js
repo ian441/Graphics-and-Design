@@ -1,3 +1,4 @@
+
 const express = require('express');
 const cors = require('cors');
 const { pool, createTables, insertSampleData } = require('./db');
@@ -5,7 +6,7 @@ const { authRoutes, portfolioRoutes, contactRoutes, adminRoutes } = require('./a
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5004;
 
 // Middleware
 app.use(cors());

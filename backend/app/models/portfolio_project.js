@@ -17,6 +17,7 @@ class PortfolioProject {
     created_at,
     updated_at
   }) {
+    this._id = id; // Frontend expects _id
     this.id = id;
     this.title = title;
     this.client = client;

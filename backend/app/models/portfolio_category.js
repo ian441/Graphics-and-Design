@@ -1,4 +1,5 @@
 const { pool } = require('../../db');
+const PortfolioProject = require('./portfolio_project');
 
 class PortfolioCategory {
   constructor({ id, name, description, created_at }) {

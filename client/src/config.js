@@ -1,5 +1,5 @@
 // API Configuration
-export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5000';
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:5004';
 
 // Default configuration
 export const DEFAULT_CONFIG = {
@@ -16,7 +16,7 @@ export const DEFAULT_CONFIG = {
 
 // Email configuration (for frontend display purposes)
 export const EMAIL_CONFIG = {
-  adminEmail: process.env.REACT_APP_ADMIN_EMAIL || 'admin@creativestudio.com',
-  supportEmail: process.env.REACT_APP_SUPPORT_EMAIL || 'support@creativestudio.com',
+  adminEmail: process.env.REACT_APP_ADMIN_EMAIL || 'atkingsclouse@gmail.com',
+  supportEmail: process.env.REACT_APP_SUPPORT_EMAIL || 'ayiloian09@gmail.com',
   responseTime: '24 hours',
 };
